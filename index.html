@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Quiz</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+            margin: 0;
+            min-height: 100vh;
+        }
+        #quiz-container {
+            max-width: 540px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 32px 24px;
+        }
+        .question {
+            margin-bottom: 24px;
+        }
+        h3 {
+            color: #007bff;
+            margin-bottom: 8px;
+        }
+        #submit-btn, #next-btn, #prev-btn {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 24px;
+            font-size: 1rem;
+            margin: 8px 4px 0 0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #submit-btn:disabled, #next-btn:disabled, #prev-btn:disabled {
+            background: #b0c4de;
+            cursor: not-allowed;
+        }
+        #solution-container {
+            margin-top: 30px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .hidden {
+            display: none;
+        }
+        .choice-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.08rem;
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 1rem;
+            border-radius: 4px;
+            border: 1px solid #b0c4de;
+            width: 100%;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="question-container"></div>
+        <button id="prev-btn" class="hidden">Previous</button>
+        <button id="next-btn">Next</button>
+        <button id="submit-btn" class="hidden">Submit</button>
+        <div id="solution-container" class="hidden"></div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
